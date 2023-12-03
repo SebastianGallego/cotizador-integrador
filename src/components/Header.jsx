@@ -2,8 +2,6 @@ import { NavLink } from "react-router-dom";
 import { Player } from "@lottiefiles/react-lottie-player";
 
 export default function Header() {
-  let usuarioAutenticado = false;
-
   return (
     <header className="h-22 py-2 container mx-auto bg-gray-800 flex justify-around  items-center">
       <Player
@@ -16,14 +14,6 @@ export default function Header() {
       />
       <h1 className="text-gray-400 text-5xl">Seguros React</h1>
 
-      <nav>
-        {usuarioAutenticado && (
-          <>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/historial"> Historial</NavLink>
-          </>
-        )}
-      </nav>
       <button
         type="button"
         className="h-10 w-25   text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-xl rounded-lg text-xl px-5  text-center "
@@ -33,3 +23,19 @@ export default function Header() {
     </header>
   );
 }
+
+/*
+  let usuarioAutenticado = false;
+
+  
+   <nav>
+        {usuarioAutenticado && (
+          <>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/historial"> Historial</NavLink>
+          </>
+        )}
+      </nav>
+
+
+*/

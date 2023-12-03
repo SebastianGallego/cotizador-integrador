@@ -3,17 +3,15 @@ import { Routes, Route } from "react-router-dom";
 
 //Componentes y Rutas
 import Header from "./components/Header";
-import Historial from "./routes/Historial";
-import NotFound404 from "./routes/NotFound404";
-import Home from "./routes/Home";
-import FormBudget from "./components/FormBudget";
+import FormBudget from "./pages/FormBudget";
 import Footer from "./components/Footer";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <>
       <Header />
-
+      <NavBar />
       <FormBudget />
 
       <Footer />
