@@ -20,14 +20,19 @@ export default function NavBar() {
       >
         Inicio
       </NavLink>
-      <NavLink
-        to="/historial"
-        className={({ isActive }) =>
-          isActive ? "text-gray-100 " : " hover:text-violet-800 hover:scale-110"
-        }
-      >
-        Historial
-      </NavLink>
+
+      {user && (
+        <NavLink
+          to="/historial"
+          className={({ isActive }) =>
+            isActive
+              ? "text-gray-100 "
+              : " hover:text-violet-800 hover:scale-110"
+          }
+        >
+          Historial
+        </NavLink>
+      )}
 
       {!user && (
         <NavLink
