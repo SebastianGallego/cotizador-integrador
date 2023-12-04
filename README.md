@@ -31,12 +31,12 @@ Aunque no se recomienda eliminar datos de la BD en este caso se puede eliminar i
 
 # Vista como Invitado
 
-![Imagen Inicio Invitado](image-2.png)
+![Imagen Inicio Invitado](/imgReadme.md/image-2.png)
 
 # Vista como Usuario Registrado (Inicio)
 
-![Imagen Inicio Usuario](image-3.png)
+![Imagen Inicio Usuario](/imgReadme.md/image-3.png)
 
 # Vista como Usuario Registrado (Historial)
 
-![imagen Historial Usuario](image-4.png)
+![imagen Historial Usuario](/imgReadme.md/image-4.png)
