@@ -22,4 +22,17 @@ Aunque no se recomienda eliminar datos de la BD en este caso se puede elimar inf
 - SweetAlert
 - Firebase (Autenticacion / BD)
 
+# Hooks:
+
+- UseState
+- UseEffect
+- useUserContext (custom)
+- useNavigate
+
+# Vista como Invitado
+
 ![Alt text](image-2.png)
+
+# Vista como Usuario Registrado (Inicio)
+
+# Vista como Usuario Registrado (Historial)
