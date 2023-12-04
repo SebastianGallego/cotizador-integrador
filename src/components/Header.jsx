@@ -1,41 +1,17 @@
-import { NavLink } from "react-router-dom";
 import { Player } from "@lottiefiles/react-lottie-player";
 
 export default function Header() {
   return (
-    <header className="h-22 py-2 container mx-auto bg-gray-800 flex justify-around  items-center">
+    <header className="h-22 py-2 container mx-auto bg-gray-800 flex justify-start gap-6  items-center">
       <Player
         src="https://lottie.host/358c9f74-7b1b-48ed-8913-bb4e89ca73ea/kqNdnSR6BA.json"
-        className="player"
+        className="player ps-10"
         loop
         autoplay
         speed={0.2}
         style={{ height: "100px", width: "100px" }}
       />
-      <h1 className="text-gray-400 text-5xl">Seguros React</h1>
-
-      <button
-        type="button"
-        className="h-10 w-25   text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-xl rounded-lg text-xl px-5  text-center "
-      >
-        Login
-      </button>
+      <h1 className="ps-10 text-gray-400 text-5xl">Seguros React</h1>
     </header>
   );
 }
-
-/*
-  let usuarioAutenticado = false;
-
-  
-   <nav>
-        {usuarioAutenticado && (
-          <>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/historial"> Historial</NavLink>
-          </>
-        )}
-      </nav>
-
-
-*/

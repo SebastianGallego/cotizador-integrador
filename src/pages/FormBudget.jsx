@@ -3,23 +3,8 @@ export default function FormBudget() {
     <section className="p-4 container mx-auto bg-gray-500 flex flex-grow gap-4 justify-start  items-center  flex-col">
       <h2 className="text-3xl underline">Completa los datos solicitados</h2>
       <label className="text-2xl">Selecciona el tipo de propiedad</label>
-      <select
-        id="propiedad"
-        className="block p-1 text-lg w-80 font-medium bg-gray-300 border-2 border-gray-900  text-gray-900 "
-      >
-        <option selected disabled>
-          ...
-        </option>
-      </select>
       <label className="text-2xl">Selecciona su ubicación</label>
-      <select
-        id="ubicacion"
-        className="block p-1 text-lg w-80 font-medium bg-gray-300 border-2 border-gray-900  text-gray-900"
-      >
-        <option selected disabled>
-          ...
-        </option>
-      </select>
+
       <label className="text-2xl">Ingresa los Metros cuadrados:</label>
       <input
         type="number"

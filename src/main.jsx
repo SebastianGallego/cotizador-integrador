@@ -1,10 +1,15 @@
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import { BrowserRouter } from "react-router-dom";
+import React from "react";
+import { router } from "./router/index.jsx";
+import { RouterProvider } from "react-router-dom";
+import UserProvider from "./context/UserContext";
+
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <React.StrictMode>
+    <UserProvider>
+      <RouterProvider router={router} />
+    </UserProvider>
+  </React.StrictMode>
 );
