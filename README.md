@@ -12,7 +12,7 @@ usr: usuario@usuario.com
 password: 123321
 
 Si el usuario está autenticado puede acceder a otra pagina donde puede visualizar el historial de cotizacion almacenados en la base de datos de Firebase.
-Aunque no se recomienda eliminar datos de la BD en este caso se puede elimar informacion a fines didacticos en la App.
+Aunque no se recomienda eliminar datos de la BD en este caso se puede eliminar información a fines didacticos en la App.
 
 # Herramientas / Librerias / Otros:
 
@@ -31,8 +31,12 @@ Aunque no se recomienda eliminar datos de la BD en este caso se puede elimar inf
 
 # Vista como Invitado
 
-![Alt text](image-2.png)
+![Imagen Inicio Invitado](image-2.png)
 
 # Vista como Usuario Registrado (Inicio)
 
+![Imagen Inicio Usuario](image-3.png)
+
 # Vista como Usuario Registrado (Historial)
+
+![imagen Historial Usuario](image-4.png)
