@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "../Layout/RootLayout";
 import LoggedLayout from "../Layout/LoggedLayout";
 import FormBudget from "../pages/FormBudget";
-import Historial from "../pages/Historial";
+import Historic from "../pages/Historic";
 import Login from "../pages/Login";
 import NotFound404 from "../pages/NotFound404";
 
@@ -21,12 +21,12 @@ export const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/historial",
+        path: "/historic",
         element: <LoggedLayout />,
         children: [
           {
             index: true,
-            element: <Historial />,
+            element: <Historic />,
           },
         ],
       },

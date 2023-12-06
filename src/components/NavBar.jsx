@@ -23,7 +23,7 @@ export default function NavBar() {
 
       {user && (
         <NavLink
-          to="/historial"
+          to="/historic"
           className={({ isActive }) =>
             isActive
               ? "text-gray-100 "

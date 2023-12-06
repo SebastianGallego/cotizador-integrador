@@ -1,5 +1,5 @@
 import { useUserContext } from "../context/UserContext";
-export default function Historial() {
+export default function Historic() {
   const { user } = useUserContext();
 
   return (

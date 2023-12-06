@@ -11,7 +11,7 @@ export default function Login() {
   const { user } = useUserContext();
 
   useEffect(() => {
-    if (user) navigate("/historial");
+    if (user) navigate("/historic");
   }, [user]);
 
   const handleSubmit = async (e) => {

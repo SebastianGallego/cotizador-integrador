@@ -1,0 +1,9 @@
+
+[] Agregar al Router la pag 404 :)
+
+[] Boton de loading para el login de usuario por ejemplo
+   https://flowbite.com/docs/components/buttons/#loader
+   crear ese componente 
+   y usarlo en el async del login (await y fanaly)
+
+   

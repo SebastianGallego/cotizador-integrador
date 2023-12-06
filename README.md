@@ -40,3 +40,7 @@ Aunque no se recomienda eliminar datos de la BD en este caso se puede eliminar i
 # Vista como Usuario Registrado (Historial)
 
 ![imagen Historial Usuario](/imgReadme.md/image-4.png)
+
+# Firebase Autenticación
+
+![Ventana Autenticación](/imgReadme.md/image.png)
