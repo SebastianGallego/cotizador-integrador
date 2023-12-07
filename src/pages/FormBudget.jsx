@@ -54,7 +54,7 @@ export default function FormBudget() {
       (d) => d.categoria === "ubicacion" && d.tipo === ubicacion
     )?.factor;
 
-    // Verifica que ambos factores sean numéricos antes de realizar operaciones
+    // Verifico que ambos factores sean numéricos antes de realizar operaciones
     if (
       typeof factorPropiedad === "number" &&
       typeof factorUbicacion === "number"
