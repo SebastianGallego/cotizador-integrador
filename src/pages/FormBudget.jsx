@@ -1,11 +1,7 @@
-//Aca tengo que leer el json
-//Cargar los select
-//Calcular la cotizacion
-//Guardar en firestore
-
 import { useState } from "react";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
+import { useFirestore } from "../hooks/useFirestore";
 
 export default function FormBudget() {
   const [datos, setDatos] = useState([]);
@@ -15,6 +11,8 @@ export default function FormBudget() {
   const [opcionesUbicacion, setOpcionesUbicacion] = useState([]);
   const [metros2, setMetros2] = useState(0);
   const [cotizacion, setCotizacion] = useState(0);
+
+  const { addData } = useFirestore();
 
   useEffect(() => {
     fetch("/datos.json")
@@ -37,15 +35,13 @@ export default function FormBudget() {
     setOpcionesUbicacion([...new Set(ciudadesFiltradas)]); //Elimina Duplicados
   }, [datos]);
 
+  useEffect(() => {
+    if (cotizacion !== 0) {
+      addCotizacion();
+    }
+  }, [cotizacion]);
+
   const calcularCotizacion = () => {
-    //Aca tengo que hacer el calculo usando tipo, ubicacion y metros2
-    //
-    // Ademas llamar a una funcion que guarde en firestore
-
-    console.log(tipo);
-    console.log(ubicacion);
-    console.log(metros2);
-
     const factorPropiedad = datos.find(
       (d) => d.categoria === "propiedad" && d.tipo === tipo
     )?.factor;
@@ -54,26 +50,29 @@ export default function FormBudget() {
       (d) => d.categoria === "ubicacion" && d.tipo === ubicacion
     )?.factor;
 
-    // Verifico que ambos factores sean numéricos antes de realizar operaciones
-    if (
-      typeof factorPropiedad === "number" &&
-      typeof factorUbicacion === "number"
-    ) {
-      console.log(factorPropiedad);
-      console.log(factorUbicacion);
-    }
-
     if (metros2 < 20 || metros2 > 500 || tipo === "" || ubicacion === "") {
       Swal.fire({
         icon: "error",
-        title: "Error de datos",
-        text: "Ingresar m2 entre 20 y 500!",
+        title: "Error de datos Ingresados",
+        text: "Seleccione Tipo, Ubicación y m2 entre 20 y 500!",
       });
       setCotizacion(0);
       return;
     }
-    setCotizacion(100 * metros2 * factorPropiedad * factorUbicacion);
-    console.log(cotizacion);
+    setCotizacion(
+      (100 * metros2 * factorPropiedad * factorUbicacion).toFixed(2)
+    );
+  };
+
+  const addCotizacion = async () => {
+    // Guardar Cotizacion en Firestore
+    await addData({
+      fecha: new Date(),
+      propiedad: tipo,
+      ubicacion: ubicacion,
+      metros2: metros2,
+      cotizacion: cotizacion,
+    });
   };
 
   return (
@@ -122,8 +121,8 @@ export default function FormBudget() {
       </div>
       <div className="center separador">
         <p className="text-2xl">
-          Poliza: Valor de la Cuota= ${" "}
-          <span id="valorPoliza">{cotizacion}</span>
+          Poliza: Valor de la Cuota={" "}
+          <span id="valorPoliza">{cotizacion} $</span>
         </p>
       </div>
     </section>

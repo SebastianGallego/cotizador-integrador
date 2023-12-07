@@ -1,4 +1,4 @@
-import { collection, getDocs } from "firebase/firestore/lite";
+import { collection, getDocs, addDoc } from "firebase/firestore/lite";
 import { useEffect, useState } from "react";
 import { db } from "../firebase";
 
@@ -8,10 +8,11 @@ export const useFirestore = () => {
   const [loading, setLoading] = useState({});
 
   useEffect(() => {
-    console.log("GetData");
+    //Lee de la BD
     getData();
   }, []);
 
+  //Leer de la BD
   const getData = async () => {
     try {
       setLoading(true);
@@ -29,5 +30,31 @@ export const useFirestore = () => {
     }
   };
 
-  return { data, error, loading, getData };
+  //Escribir en la BD
+  const addData = async ({
+    fecha,
+    propiedad,
+    ubicacion,
+    metros2,
+    cotizacion,
+  }) => {
+    try {
+      setLoading(true);
+      console.log(cotizacion);
+      //Guarda en la BD generando un id automatico
+      await addDoc(collection(db, "polizas"), {
+        fecha: fecha,
+        propiedad: propiedad,
+        ubicacion: ubicacion,
+        superficie: metros2,
+        cuota: cotizacion,
+      });
+    } catch (error) {
+      setError(error.code);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return { data, error, loading, getData, addData };
 };

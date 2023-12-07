@@ -23,12 +23,11 @@ export default function Historic() {
   if (error) return <p>Error al cargar datos</p>;
 
   return (
-    <section className=" p-4 container mx-auto overflow-x-auto bg-gray-500 ">
-      <h1 className="text-3xl text-gray-200">
+    <section className=" p-4 container mx-auto text-center   overflow-x-auto bg-gray-500 ">
+      <h1 className="text-3xl text-gray-200 pb-4">
         Historial de Cotizaciones en Base de Datos
       </h1>
-
-      <table className="w-full border-collapse border">
+      <table className="mx-auto w-[80%] border-collapse border">
         <thead>
           <tr>
             <th className="border border-black px-4 sm:px-4 py-2 text-xl text-bold">

@@ -6,4 +6,15 @@
    crear ese componente 
    y usarlo en el async del login (await y fanaly)
 
-   
+[] renderizado condicional 
+
+[X] Guardar cotizacion en Firestore 
+
+[] Borrar Historial 
+
+[] Limpiar formulario luego de cotizar. ¿con boton?
+
+
+
+
+
