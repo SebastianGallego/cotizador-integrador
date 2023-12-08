@@ -14,7 +14,8 @@
 
 [] Limpiar formulario luego de cotizar. ¿con boton?
 
-
-
+[] Hacer el calculo para que se ve la pantalla completa
+   hacer el calculo del VH - la altura menos el header menos el footer 
+   
 
 

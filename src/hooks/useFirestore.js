@@ -56,5 +56,23 @@ export const useFirestore = () => {
     }
   };
 
-  return { data, error, loading, getData, addData };
+  //Eliminar todos los documentos (filas )de la collecion (tabla)
+  const deleteAllData = async () => {
+    try {
+      //Traigo todos los documentos
+      console.log("entra en el usefirestore");
+      const allData = await db.collection("poliza").get();
+      // Eliminar cada documento encontrado
+      console.log(allData);
+      allData.forEach(async (doc) => {
+        await db.collection("poliza").doc(doc.id).delete();
+      });
+    } catch (error) {
+      setError(error.code);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return { data, error, loading, getData, addData, deleteAllData };
 };

@@ -3,11 +3,17 @@ import { useEffect } from "react";
 import { useFirestore } from "../hooks/useFirestore";
 
 export default function Historic() {
-  const { data, error, loading, getData } = useFirestore();
+  const { data, error, loading, getData, deleteAllData } = useFirestore();
 
   useEffect(() => {
     getData();
   }, []);
+
+  const deleteAll = async () => {
+    //Borro todos los documentos de poliza
+    console.log("borrar polizas");
+    await deleteAllData();
+  };
 
   const formatDate = (timestampObject) => {
     const timestamp = timestampObject.seconds * 1000; // Convertir segundos a milisegundos
@@ -70,6 +76,13 @@ export default function Historic() {
           ))}
         </tbody>
       </table>
+      <button
+        onClick={deleteAll}
+        type="button"
+        className="my-5 text-white bg-gradient-to-br from-red-600 to-blue-500 hover:bg-gradient-to-bl     font-medium rounded-lg text-xl px-5 py-2 text-center "
+      >
+        Borrar Historial
+      </button>
     </section>
   );
 }
