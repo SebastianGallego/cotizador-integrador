@@ -32,6 +32,9 @@ export default function Login() {
     <section className="h-[528px] p-4 container mx-auto bg-gray-500 flex flex-grow gap-4 justify-start  items-center  flex-col">
       <h1 className="text-3xl text-gray-200 underline">Formulario de Login</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <label className="block text-lg font-medium text-gray-900 dark:text-white">
+          Usuario:
+        </label>
         <input
           type="text"
           name="email"
@@ -39,7 +42,11 @@ export default function Login() {
           placeholder="Ingrese email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         />
+        <label className="block text-lg font-medium text-gray-900 dark:text-white">
+          Password:
+        </label>
         <input
           type="password"
           name="password"
@@ -47,6 +54,7 @@ export default function Login() {
           placeholder="Ingrese password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         />
         <button
           type="submit"

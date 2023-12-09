@@ -22,13 +22,6 @@ export default function Historic() {
       confirmButtonText: "Si, Eliminar!",
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Cotización Eliminada",
-          showConfirmButton: false,
-          timer: 1500,
-        });
         deleteData(id);
       }
     });

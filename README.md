@@ -51,10 +51,14 @@ Pagina 404
 
 ![Coleccion Polizas](/imgReadme.md/image1.png)
 
-# Páginas
+# Página Login
 
 ![Alt text](/imgReadme.md/image6.png)
 
+# Página Cotizaciones
+
 ![Alt text](/imgReadme.md/image7.png)
+
+# Página Historial (Protegida)
 
 ![Alt text](/imgReadme.md/image8.png)
