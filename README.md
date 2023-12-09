@@ -24,8 +24,8 @@ Aunque no se recomienda eliminar datos de la BD en este caso se puede eliminar i
 
 # Hooks:
 
-- UseState
-- UseEffect
+- useState
+- useEffect
 - useUserContext (custom)
 - useNavigate
 

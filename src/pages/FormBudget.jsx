@@ -76,7 +76,7 @@ export default function FormBudget() {
   };
 
   return (
-    <section className="p-4 container mx-auto bg-gray-500 flex flex-grow gap-4 justify-start  items-center  flex-col">
+    <section className=" p-4 container mx-auto bg-gray-500 flex flex-grow gap-4 justify-start  items-center  flex-col">
       <h2 className="text-3xl underline">Completa los datos solicitados</h2>
       <label className="text-2xl">Selecciona el Tipo de Propiedad</label>
 

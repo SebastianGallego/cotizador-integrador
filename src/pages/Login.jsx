@@ -41,7 +41,7 @@ export default function Login() {
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
-          type="passwod"
+          type="password"
           name="password"
           id="inputPassword"
           placeholder="Ingrese password"

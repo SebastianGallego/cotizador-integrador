@@ -1,18 +1,30 @@
 import { useEffect } from "react";
-
 import { useFirestore } from "../hooks/useFirestore";
+import Swal from "sweetalert2";
 
 export default function Historic() {
-  const { data, error, loading, getData, deleteAllData } = useFirestore();
+  const { data, error, loading, getData, deleteData } = useFirestore();
 
   useEffect(() => {
     getData();
   }, []);
 
-  const deleteAll = async () => {
-    //Borro todos los documentos de poliza
-    console.log("borrar polizas");
-    await deleteAllData();
+  //Borro cotizacion
+  const deleteBudget = async (id) => {
+    Swal.fire({
+      title: "Está seguro de Eliminar esta Cotización?",
+      text: "Estas a tiempo de arrepentirte!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, Eliminar!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Cotizacion Eliminada!", "success");
+        deleteData(id);
+      }
+    });
   };
 
   const formatDate = (timestampObject) => {
@@ -51,6 +63,9 @@ export default function Historic() {
             <th className="border border-black px-4 sm:px-4 py-2 text-xl text-bold">
               Cuota
             </th>
+            <th className="border border-black px-4 sm:px-4 py-2 text-xl text-bold">
+              Cotización
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -60,29 +75,31 @@ export default function Historic() {
                 {formatDate(poliza.fecha)}
               </td>
 
-              <td className="border border-black sm:px-4 px-4 py-2 text-xl text-bold">
+              <td className="border border-black sm:px-4 px-4 py-1 text-xl text-bold">
                 {poliza.propiedad}
               </td>
-              <td className="border border-black sm:px-4 px-4 py-2 text-xl text-bold">
+              <td className="border border-black sm:px-4 px-4 py-1 text-xl text-bold">
                 {poliza.ubicacion}
               </td>
-              <td className="border border-black sm:px-4 px-4 py-2 text-xl text-bold">
+              <td className="border border-black sm:px-4 px-4 py-1 text-xl text-bold">
                 {poliza.superficie}
               </td>
-              <td className="border border-black sm:px-4 px-4 py-2 text-xl text-bold">
+              <td className="border border-black sm:px-4 px-4 py-1 text-xl text-bold">
                 {poliza.cuota}
+              </td>
+              <td className="border border-black sm:px-4 px-4 py-1 text-xl text-bold">
+                <button
+                  onClick={() => deleteBudget(poliza.id)}
+                  type="button"
+                  className=" text-xl px-5 py-2 text-center "
+                >
+                  ❌
+                </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <button
-        onClick={deleteAll}
-        type="button"
-        className="my-5 text-white bg-gradient-to-br from-red-600 to-blue-500 hover:bg-gradient-to-bl     font-medium rounded-lg text-xl px-5 py-2 text-center "
-      >
-        Borrar Historial
-      </button>
     </section>
   );
 }

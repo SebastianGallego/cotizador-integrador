@@ -9,7 +9,7 @@ const Root = () => {
     <UserContextProvider>
       <Header />
       <NavBar />
-      <main>
+      <main className="flex-1 overflow-y-auto">
         <Outlet />
       </main>
       <Footer />

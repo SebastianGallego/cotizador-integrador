@@ -1,4 +1,10 @@
-import { collection, getDocs, addDoc } from "firebase/firestore/lite";
+import {
+  collection,
+  getDocs,
+  addDoc,
+  deleteDoc,
+  doc,
+} from "firebase/firestore/lite";
 import { useEffect, useState } from "react";
 import { db } from "../firebase";
 
@@ -57,16 +63,14 @@ export const useFirestore = () => {
   };
 
   //Eliminar todos los documentos (filas )de la collecion (tabla)
-  const deleteAllData = async () => {
+  const deleteData = async (id) => {
     try {
       //Traigo todos los documentos
       console.log("entra en el usefirestore");
-      const allData = await db.collection("poliza").get();
-      // Eliminar cada documento encontrado
-      console.log(allData);
-      allData.forEach(async (doc) => {
-        await db.collection("poliza").doc(doc.id).delete();
-      });
+      setLoading(true);
+      await deleteDoc(doc(db, "polizas", id)); //Borro de Firestore
+      //Lo borro del estado para no volver a pedir a firestore
+      setData(data.filter((poliza) => poliza.id !== id));
     } catch (error) {
       setError(error.code);
     } finally {
@@ -74,5 +78,5 @@ export const useFirestore = () => {
     }
   };
 
-  return { data, error, loading, getData, addData, deleteAllData };
+  return { data, error, loading, getData, addData, deleteData };
 };
