@@ -11,6 +11,7 @@ export default function FormBudget() {
   const [opcionesUbicacion, setOpcionesUbicacion] = useState([]);
   const [metros2, setMetros2] = useState(0);
   const [cotizacion, setCotizacion] = useState(0);
+  const [checkout, setCheckout] = useState(false);
 
   const { addData } = useFirestore();
 
@@ -59,6 +60,7 @@ export default function FormBudget() {
       setCotizacion(0);
       return;
     }
+    setCheckout(true);
     setCotizacion(
       (100 * metros2 * factorPropiedad * factorUbicacion).toFixed(2)
     );
@@ -75,12 +77,25 @@ export default function FormBudget() {
     });
   };
 
+  const limpiarFormulario = () => {
+    // Limpiar el formulario
+    setTipo("");
+    setUbicacion("");
+    setMetros2(0);
+    setCotizacion(0);
+    setCheckout(false);
+  };
+
   return (
     <section className=" p-4 container mx-auto bg-gray-500 flex flex-grow gap-4 justify-start  items-center  flex-col">
       <h2 className="text-3xl underline">Completa los datos solicitados</h2>
       <label className="text-2xl">Selecciona el Tipo de Propiedad</label>
 
-      <select onChange={(e) => setTipo(e.target.value)}>
+      <select
+        value={tipo}
+        onChange={(e) => setTipo(e.target.value)}
+        className="w-1/3 block px-4 py-3 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      >
         <option value="">Selecciona Propiedad</option>
         {opcionesTipo.map((tipo) => (
           <option key={tipo} value={tipo}>
@@ -89,9 +104,13 @@ export default function FormBudget() {
         ))}
       </select>
 
-      <label className="text-2xl">Selecciona su ubicación</label>
-      <select onChange={(e) => setUbicacion(e.target.value)}>
-        <option value="">Selecciona Ubicación</option>
+      <label className="text-2xl">Selecciona la ubicación</label>
+      <select
+        value={ubicacion}
+        onChange={(e) => setUbicacion(e.target.value)}
+        className="w-1/3 block px-4 py-3 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      >
+        <option value="">Selecciona ubicación</option>
         {opcionesUbicacion.map((ciudad) => (
           <option key={ciudad} value={ciudad}>
             {ciudad}
@@ -102,21 +121,21 @@ export default function FormBudget() {
       <label className="text-2xl">Ingresa los Metros cuadrados:</label>
       <input
         type="number"
-        id="metros2"
+        value={metros2}
         min="20"
         max="500"
         required
         onChange={(e) => setMetros2(parseInt(e.target.value))}
-        className=" text-gray-900 p-1 text-center text-lg w-20 font-medium bg-gray-300 border-2 border-gray-900"
+        className="text-center w-1/4 block px-4 py-3 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
       ></input>
 
       <div className="pt-4">
         <button
-          onClick={calcularCotizacion}
+          onClick={checkout ? limpiarFormulario : calcularCotizacion}
           type="button"
-          className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-xl px-5 py-2 text-center "
+          className="text-center text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-xl px-5 py-2 "
         >
-          Cotizar
+          {checkout ? "Limpiar" : "Cotizar"}
         </button>
       </div>
       <div className="center separador">

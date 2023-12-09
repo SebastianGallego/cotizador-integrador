@@ -46,7 +46,6 @@ export const useFirestore = () => {
   }) => {
     try {
       setLoading(true);
-      console.log(cotizacion);
       //Guarda en la BD generando un id automatico
       await addDoc(collection(db, "polizas"), {
         fecha: fecha,
@@ -66,7 +65,7 @@ export const useFirestore = () => {
   const deleteData = async (id) => {
     try {
       //Traigo todos los documentos
-      console.log("entra en el usefirestore");
+
       setLoading(true);
       await deleteDoc(doc(db, "polizas", id)); //Borro de Firestore
       //Lo borro del estado para no volver a pedir a firestore

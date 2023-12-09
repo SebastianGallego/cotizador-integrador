@@ -14,6 +14,8 @@ password: 123321
 Si el usuario está autenticado puede acceder a otra pagina donde puede visualizar el historial de cotizacion almacenados en la base de datos de Firebase.
 Aunque no se recomienda eliminar datos de la BD en este caso se puede eliminar información a fines didacticos en la App.
 
+Pagina 404
+
 # Herramientas / Librerias / Otros:
 
 - Vite

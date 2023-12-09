@@ -1,28 +1,24 @@
 
 [X] Agregar al Router la pag 404 :)
 
-
-
 [X] Guardar cotizacion en Firestore 
 
 [X] Leer cotizaciones de Firestore 
 
 [X] Borrar Cotizaciones con confirmacion
 
-[] Limpiar formulario luego de cotizar. ¿con boton?
+[X] Limpiar formulario luego de cotizar. ¿con boton?
 
 [] Hacer el calculo para que se ve la pantalla completa
    hacer el calculo del VH - la altura menos el header menos el footer 
    O buscar una solucion a esto 
 
-[] Boton de loading para el login de usuario por ejemplo
-   https://flowbite.com/docs/components/buttons/#loader
-   crear ese componente 
-   y usarlo en el async del login (await y finally)
+[X] Spinner loading para el login de usuario por ejemplo y para hsitorial
+   https://flowbite.com
 
-[] renderizado condicional 
+[x] renderizado condicional 
 
-[] Agregar UI a los <select>    
+[X] Agregar UI a los <select>    
 
 
    
