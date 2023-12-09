@@ -4,7 +4,8 @@
 
 Cotizador con React
 
-La aplicación consta de un cotizador de seguros. Según las opciones seleccionadas la aplicación calcula la cuota mensual de la poliza del seguro.
+La aplicación es un simulador de un cotizador de seguros. 
+Según las opciones seleccionadas la aplicación calcula la cuota mensual de la poliza del seguro.
 Se puede utilizar como "invitado" para tener una cotizacion que va a ser almacenada en la base de datos de Firebase.
 O se puede autenticar como un de los usuarios registrados en la base de datos de Firebase. 
 
@@ -18,7 +19,12 @@ Si el usuario está autenticado puede acceder a la pagina del historial de cotiz
 Aunque no se recomienda eliminar datos de la BD en este caso se puede eliminar información a fines didacticos en la App.
 Se puede eliminar cada cotización por separada o todo el historial.
 
-Pagina 404
+Al realizar una cotización el mismo boton permite limpiar el formulario y dejarlo en las condiciones iniciales.
+
+La información que se muestra en las listas deplegables de "Tipo de Propiedad" y "Ubicación de la propiedad" provienen 
+de un archivo json donde además cada opción tiene un factor numérico que es utilizado para realizar la cotización.
+
+Está contemplada una Pagina 404 para rutas inexistentes. 
 
 # Herramientas / Librerias / Otros:
 
