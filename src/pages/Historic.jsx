@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useFirestore } from "../hooks/useFirestore";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 export default function Historic() {
   const { data, error, loading, getData, deleteData } = useFirestore();
@@ -44,17 +45,10 @@ export default function Historic() {
       confirmButtonText: "Si, Eliminar!",
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Cotizaciones Eliminadas",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-
-        //hacer un map para recorrer todas los ID
-
-        deleteData();
+        //recorro con un map y elimino pasando el id
+        //No se recomienda eliminar datos, ademas estoy generando
+        //muchas consultas a la BD
+        data.map((poliza) => deleteData(poliza.id));
       }
     });
   };
@@ -102,7 +96,7 @@ export default function Historic() {
     );
 
   return (
-    <section className=" p-4 container mx-auto text-center   overflow-x-auto bg-gray-500 ">
+    <section className="h-[528px] p-4 container mx-auto text-center   overflow-x-auto bg-gray-500 ">
       <h1 className="text-3xl text-gray-200 pb-4">
         Historial de Cotizaciones en Base de Datos
       </h1>
@@ -153,13 +147,15 @@ export default function Historic() {
         </tbody>
       </table>
 
-      <button
-        onClick={deleteAllBudgets}
-        type="button"
-        className="my-5 text-center text-white bg-gradient-to-br from-red-600 to-yellow-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-xl px-5 py-2 "
-      >
-        Elimitar Totas las Cotizaciones
-      </button>
+      {data.length > 0 && (
+        <button
+          onClick={deleteAllBudgets}
+          type="button"
+          className="my-5 text-center text-white bg-gradient-to-br from-red-600 to-yellow-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-xl px-5 py-2 "
+        >
+          Eliminar Todas las Cotizaciones
+        </button>
+      )}
     </section>
   );
 }

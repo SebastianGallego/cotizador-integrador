@@ -29,7 +29,7 @@ export default function Login() {
   };
 
   return (
-    <section className="p-4 container mx-auto bg-gray-500 flex flex-grow gap-4 justify-start  items-center  flex-col">
+    <section className="h-[528px] p-4 container mx-auto bg-gray-500 flex flex-grow gap-4 justify-start  items-center  flex-col">
       <h1 className="text-3xl text-gray-200 underline">Formulario de Login</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
