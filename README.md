@@ -4,15 +4,19 @@
 
 Cotizador con React
 
-La aplicación consta de un cotizador de seguros. Según las opciones seleccionadas va a calcular la cuota mensual de la poliza del seguro.
+La aplicación consta de un cotizador de seguros. Según las opciones seleccionadas la aplicación calcula la cuota mensual de la poliza del seguro.
 Se puede utilizar como "invitado" para tener una cotizacion que va a ser almacenada en la base de datos de Firebase.
-O se puede utilizar pasando la autencicacion de usuario de la base de datos de Firebase:
+O se puede autenticar como un de los usuarios registrados en la base de datos de Firebase. 
 
 usr: usuario@usuario.com
 password: 123321
 
-Si el usuario está autenticado puede acceder a otra pagina donde puede visualizar el historial de cotizacion almacenados en la base de datos de Firebase.
+usr: admin@admin.com
+password: 123123
+
+Si el usuario está autenticado puede acceder a la pagina del historial de cotizaciones almacenadas en Firestore.
 Aunque no se recomienda eliminar datos de la BD en este caso se puede eliminar información a fines didacticos en la App.
+Se puede eliminar cada cotización por separada o todo el historial.
 
 Pagina 404
 
