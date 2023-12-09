@@ -45,8 +45,16 @@ Pagina 404
 
 # Firebase Autenticación
 
-![Ventana Autenticación](/imgReadme.md/image.png)
+![Ventana Autenticación](/imgReadme.md/image5.png)
 
 # Firebase Coleccion
 
 ![Coleccion Polizas](/imgReadme.md/image1.png)
+
+# Páginas
+
+![Alt text](/imgReadme.md/image6.png)
+
+![Alt text](/imgReadme.md/image7.png)
+
+![Alt text](/imgReadme.md/image8.png)
