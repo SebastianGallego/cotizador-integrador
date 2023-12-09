@@ -4,7 +4,7 @@
 
 Cotizador con React
 
-La aplicación consta de un cotizador de seguros. Según las opciones seleccionaleas va a calcular la cuota mensual de la poliza del seguro.
+La aplicación consta de un cotizador de seguros. Según las opciones seleccionadas va a calcular la cuota mensual de la poliza del seguro.
 Se puede utilizar como "invitado" para tener una cotizacion que va a ser almacenada en la base de datos de Firebase.
 O se puede utilizar pasando la autencicacion de usuario de la base de datos de Firebase:
 
