@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useFirestore } from "../hooks/useFirestore";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
 
 export default function Historic() {
   const { data, error, loading, getData, deleteData } = useFirestore();
