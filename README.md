@@ -2,7 +2,7 @@
 
 # Untref
 
-Cotizador con React
+Cotizador con React (Autenticación y Base de Datos Firebase)
 
 La aplicación es un simulador de un cotizador de seguros. 
 Según las opciones seleccionadas la aplicación calcula la cuota mensual de la poliza del seguro.
