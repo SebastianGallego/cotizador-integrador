@@ -5,6 +5,7 @@
 Cotizador con React (Autenticación y Base de Datos Firebase)
 
 https://cotizador-sgallego.netlify.app/
+https://app-cotizador-untref.web.app/
 
 La aplicación es un simulador de un cotizador de seguros. 
 Según las opciones seleccionadas la aplicación calcula la cuota mensual de la poliza del seguro.
